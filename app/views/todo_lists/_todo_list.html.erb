@@ -1,0 +1,4 @@
+<p><%= todo_list.content %></p>
+<div class="actions">
+  <%= link_to "delete", note_todo_list_path(@note, todo_list.id), method: :delete, data: { confirm: "Are you sure?" } %>
+</div>

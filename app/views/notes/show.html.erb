@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @note.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @note.description %>
+</p>
+
+<%= link_to 'Edit', edit_note_path(@note) %> |
+<%= link_to 'Back', notes_path %>
+
+<h2><%= @note.todo_lists.count %> items</h2>
+
+<div class="list">
+  <%= render @note.todo_lists %>
+  <div class="list-form">
+    <%= render 'todo_lists/form' %>
+  </div>
+</div>
