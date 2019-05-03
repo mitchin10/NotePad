@@ -25,7 +25,7 @@ class TodoListsController < ApplicationController
   private
 
   def set_note
-    @note = Note.find(params[:note_id])
+    @note = Note.friendly.find(params[:note_id])
   end
 
   def set_todo_list
