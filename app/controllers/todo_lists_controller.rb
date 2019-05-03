@@ -1,5 +1,6 @@
 class TodoListsController < ApplicationController
   before_action :set_note
+  before_action :set_todo_list, except: [:create]
 
   def create
     @todo_list = @note.todo_lists.create(todo_list_params)
@@ -11,8 +12,13 @@ class TodoListsController < ApplicationController
   end
 
   def destroy
-    @todo_list = @note.todo_lists.find(params[:id])
     @todo_list.destroy
+    redirect_to @note
+  end
+
+  # toggle_completion def => models/todo_list.rb
+  def complete
+    @todo_list.toggle_completion
     redirect_to @note
   end
 
@@ -20,6 +26,10 @@ class TodoListsController < ApplicationController
 
   def set_note
     @note = Note.find(params[:note_id])
+  end
+
+  def set_todo_list
+    @todo_list = @note.todo_lists.find(params[:id])
   end
 
   def todo_list_params
