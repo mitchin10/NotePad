@@ -3,6 +3,7 @@
 <% else %>
   <p class="todo-list-item"><%= link_to todo_list.content, complete_note_todo_list_path(@note, todo_list.id), method: :patch %></p>
 <% end %>
+
 <div class="actions icon-trash">
   <%= link_to "delete", note_todo_list_path(@note, todo_list.id), method: :delete, data: { confirm: "Are you sure?" } %>
 </div>

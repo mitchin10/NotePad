@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(version: 20190503194347) do
     t.integer  "note_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.datetime "completed_at"
     t.string   "slug"
+    t.datetime "completed_at"
     t.index ["note_id"], name: "index_todo_lists_on_note_id", using: :btree
     t.index ["slug"], name: "index_todo_lists_on_slug", unique: true, using: :btree
   end

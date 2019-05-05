@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'todo_lists/edit'
+  # get 'todo_lists/edit'
 
-  get 'todo_lists/create'
+  # get 'todo_lists/create'
 
   root 'notes#index'
 

@@ -1,6 +1,8 @@
 class TodoList < ApplicationRecord
   belongs_to :note
 
+  scope :sorted, -> { order("created_at ASC") }
+
   validates_presence_of :content
 
   def completed?

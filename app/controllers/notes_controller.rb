@@ -4,12 +4,13 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.json
   def index
-    @notes = Note.all
+    @notes = Note.asc_order
   end
 
   # GET /notes/1
   # GET /notes/1.json
   def show
+    @todo_list = @note.todo_lists.sorted
   end
 
   # GET /notes/new
