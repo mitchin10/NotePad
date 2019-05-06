@@ -1,5 +1,6 @@
 class Note < ApplicationRecord
-  has_many :todo_lists
+  belongs_to :note_category
+  has_many :todo_lists, dependent: :destroy
 
   scope :asc_order, -> { order("created_at DESC") }
 
