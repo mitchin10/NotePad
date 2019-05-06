@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :note_categories
   # get 'todo_lists/edit'
 
   # get 'todo_lists/create'
