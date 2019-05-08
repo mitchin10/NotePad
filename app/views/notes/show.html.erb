@@ -1,19 +1,23 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @note.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @note.description %>
-</p>
-
-<%= link_to 'Edit', edit_note_path(@note) %> |
-<%= link_to 'Back', notes_path %>
-
-<h2><%= @note.todo_lists.count %> items</h2>
+<div class="notice-info">
+  <p id="notice"><%= notice %></p>
+</div>
+<div class="title">
+  <h1>
+    <%= @note.title %>
+  </h1>
+</div>
+<div class="description">
+  <p>
+    <%= @note.description %>
+  </p>
+</div>
+<div class="actions">
+  <%= link_to 'Edit', edit_note_path(@note) %>
+  <%= link_to 'Back', notes_path %>
+</div>
+<div class="num-items">
+  <h2><%= @note.todo_lists.count %> items</h2>
+</div>
 
 <div class="list">
   <%= render @note.todo_lists %>

@@ -1,13 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div class="title">
+  <h1>Todo Notes</h1>
+</div>
+<div class="notice-info">
+  <p id="notice"><%= notice %></p>
+</div>
 
-<h1>Notes</h1>
+<div class="actions">
+  <%= link_to 'Add New Note', new_note_path %>
+</div>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Tasks</th>
+      <th class="table-header">Title</th>
+      <th class="table-header">Description</th>
+      <th class="table-header">Tasks</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,17 +22,12 @@
   <tbody>
     <% @notes.each do |note| %>
       <tr>
-        <td><%= note.title %></td>
-        <td><%= note.description %></td>
-        <td><%= note.todo_lists.count %></td>
-        <td><%= link_to 'Show', note %></td>
+        <td class="table-data"><%= link_to note.title, note_path(note) %></td>
+        <td class="table-data"><%= truncate(note.description, :leghth => 10) %></td>
+        <td class="table-data"><%= note.todo_lists.count %></td>
         <td><%= link_to 'Edit', edit_note_path(note) %></td>
         <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Note', new_note_path %>

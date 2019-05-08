@@ -1,4 +1,4 @@
 <%= form_for([@note, @note.todo_lists.build]) do |f| %>
-  <%= f.text_field :content, placeholder: "Enter your list item here..." %>
-  <%= f.submit %>
+  <%= f.text_field :content, autofocus: true, placeholder: "Enter your list item here...", class: 'item-text-field' %>
+  <%= f.submit "Enter", class: 'btn-submit' %>
 <% end %>
